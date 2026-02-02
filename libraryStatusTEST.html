@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Service Status</title>
+  <style>
+    body {
+      font-family: Segoe UI, Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .status {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 6px;
+      width: 220px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .ok { color: green; }
+    .warn { color: orange; }
+    .down { color: red; }
+
+    .updated {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Library Systems Status</h1>
+
+<div class="status">
+  <div class="card">
+    <strong>Public Printers</strong><br>
+    <span class="ok">Operational</span>
+  </div>
+
+  <div class="card">
+    <strong>Netloan</strong><br>
+    <span class="ok">Operational</span>
+  </div>
+
+  <div class="card">
+    <strong>Council Services</strong><br>
+    <span class="warn">Intermittent</span>
+  </div>
+
+  <div class="card">
+    <strong>Slip Printers</strong><br>
+    <span class="ok">Operational</span>
+  </div>
+
+  <div class="card">
+    <strong>Phones</strong><br>
+    <span class="warn">Intermittent</span>
+  </div>
+
+</div>
+
+<div class="updated" id="updated"></div>
+
+<script>
+  const updated = document.getElementById("updated");
+  updated.textContent = "Last updated: " + new Date().toLocaleString();
+</script>
+
+</body>
+</html>
